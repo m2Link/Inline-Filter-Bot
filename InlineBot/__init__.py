@@ -1,4 +1,4 @@
-# Copyright (C) @CodeXBotz - All Rights Reserved
+# Copyright (C) @m2botz - All Rights Reserved
 # Licensed under GNU General Public License as published by the Free Software Foundation
 # Written by Shahsad Kolathur <shahsadkpklr@gmail.com>, June 2021
 
@@ -28,7 +28,7 @@ except ValueError:
 import logging
 from logging.handlers import RotatingFileHandler
 
-LOG_FILE_NAME = "codexbotz.txt"
+LOG_FILE_NAME = "m2botz.txt"
 
 logging.basicConfig(
     level=logging.INFO,
@@ -51,7 +51,7 @@ def LOGGER(name: str) -> logging.Logger:
 #---------- ---------- ---------- ----------
 from pyrogram import Client
 
-class CodeXBotz(Client):
+class m2botz(Client):
     def __init__(self):
         super().__init__(
             "bot",
@@ -69,7 +69,7 @@ class CodeXBotz(Client):
         await super().start()
         bot_details = await self.get_me()
         self.LOGGER(__name__).info(f"@{bot_details.username}  started!")
-        self.LOGGER(__name__).info("Created by 𝘾𝙤𝙙𝙚 𝕏 𝘽𝙤𝙩𝙯\nhttps://t.me/CodeXBotz")
+        self.LOGGER(__name__).info("Created by 𝘾𝙤𝙙𝙚 𝕏 𝘽𝙤𝙩𝙯\nhttps://t.me/m2botz")
         self.bot_details = bot_details
 
     async def stop(self, *args):
