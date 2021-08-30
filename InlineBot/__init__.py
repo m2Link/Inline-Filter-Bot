@@ -28,7 +28,7 @@ except ValueError:
 import logging
 from logging.handlers import RotatingFileHandler
 
-LOG_FILE_NAME = "m2botz.txt"
+LOG_FILE_NAME = "codexbotz.txt"
 
 logging.basicConfig(
     level=logging.INFO,
