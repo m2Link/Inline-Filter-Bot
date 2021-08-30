@@ -1,2 +1,2 @@
-from InlineBot import CodeXBotz
-CodeXBotz().run()
+from InlineBot import m2botz
+m2botz().run()
