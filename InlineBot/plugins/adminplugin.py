@@ -1,10 +1,10 @@
-# Copyright (C) @CodeXBotz - All Rights Reserved
+# Copyright (C) @m2botz - All Rights Reserved
 # Licensed under GNU General Public License as published by the Free Software Foundation
 # Written by Shahsad Kolathur <shahsadkpklr@gmail.com>, June 2021
 
 import asyncio
 from InlineBot import (
-    CodeXBotz,
+    m2botz,
     filters,
     Message,
     InlineKeyboardMarkup,
@@ -22,14 +22,14 @@ from pyrogram.errors import (
     InputUserDeactivated
 )
 
-@CodeXBotz.on_message(filters.private & filters.command('stats') & filters.admins)
+@m2botz.on_message(filters.private & filters.command('stats') & filters.admins)
 async def getstatus(client: CodeXBotz, message: Message):
     sts_msg = await message.reply('Getting Details..')
     stats = await get_status()
     await sts_msg.edit(stats)
     
-@CodeXBotz.on_message(filters.private & filters.command('broadcast') & filters.admins & filters.reply)
-async def broadcast(client: CodeXBotz, message: Message):
+@m2botz.on_message(filters.private & filters.command('broadcast') & filters.admins & filters.reply)
+async def broadcast(client: m2botz, message: Message):
     broadcast_msg = message.reply_to_message
     broadcast_msg = await broadcast_msg.copy(
         chat_id = message.chat.id,
@@ -49,8 +49,8 @@ async def broadcast(client: CodeXBotz, message: Message):
     )
     return
 
-@CodeXBotz.on_callback_query(filters.admins & filters.regex('^bdcast_cnfrm$'))
-async def broadcast_confrm(client: CodeXBotz, query):
+@m2botz.on_callback_query(filters.admins & filters.regex('^bdcast_cnfrm$'))
+async def broadcast_confrm(client: m2botz, query):
     if not query.message.reply_to_message:
         await query.answer(
             text = 'Message not found',
